@@ -1,56 +1,104 @@
-<script>
-  const messages = [
-    "06-08-2025",
-    "Chúc em sinh nhật vui vẻ!",
-    "Sinh nhật tuổi 30",
-    "Thanh xuân là em 🌺🌺",
-    "Best Wishes For You",
-    "Vui vẻ và Hạnh phúc ❤️",
-    "❤️❤️🥰🥰❤️❤️",
-    "An nhiên tự tại",
-    "Mãi là cô bé xinh đẹp của lòng anh!",
-    "Sinh nhật đáng nhớ",
-    "Sinh nhật đầu tiên khi có anh",
-    "❤️❤️ I Love You ❤️❤️",
-    "Hạnh phúc ngập tràn mỗi ngày",
-    "Nụ cười em là điều quý giá",
-    "Chúc em luôn tỏa sáng rạng ngời",
-    "Mỗi khoảnh khắc bên em đều quý báu",
-    "Yêu thương luôn bên em mỗi bước đi",
-    "Chúc em thành công và bình an",
-    "Ngập tràn những điều tốt đẹp nhất",
-    "Tuổi mới luôn xinh đẹp và tự tin",
-    "Luôn có anh dõi theo từ xa...",
-    "❤️ Mãi thương em ❤️",
-    "🌸 Hoa cũng không bằng em 🌸",
-    "Cười nhiều vào nhé cô bé của anh 😊😊",
-    "Gửi đến em ngàn lời chúc dễ thương nhất!",
-    "Sinh nhật hồng như má em vậy á",
-    "Thế giới của anh tươi đẹp hơn vì có em",
-    "Ánh mắt em làm tim anh tan chảy",
-    "❤️ Em là người đặc biệt nhất ❤️"
-  ];
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lời Chúc Sinh Nhật</title>
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      overflow: hidden;
+      height: 100vh;
+      font-family: 'Arial', sans-serif;
+    }
+    .message {
+      position: absolute;
+      color: #ff69b4;
+      white-space: nowrap;
+      font-size: 24px;
+      animation: floatRandom linear forwards;
+      text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4, 0 0 30px #ff69b4;
+    }
 
-  function createMessage(text) {
-    const div = document.createElement('div');
-    div.className = 'message';
-    div.innerText = text;
-    div.style.left = Math.random() * 100 + 'vw';
-    div.style.top = '100vh';
-    div.style.fontSize = (20 + Math.random() * 10) + 'px';
-    div.style.setProperty('--x', `${(Math.random() - 0.5) * 50}vw`);
-    div.style.animationDuration = (8 + Math.random() * 4) + 's';
-    document.body.appendChild(div);
+    @keyframes floatRandom {
+      0% {
+        transform: translate(0, 0);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      50% {
+        transform: translate(var(--x), -50vh);
+        opacity: 1;
+      }
+      100% {
+        transform: translate(calc(var(--x) * 2), -120vh);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_6598b60b25.mp3" type="audio/mpeg">
+  </audio>
 
-    setTimeout(() => {
-      document.body.removeChild(div);
-    }, 13000);
-  }
+  <script>
+    const messages = [
+      "06-08-2025",
+      "Chúc em sinh nhật vui vẻ!",
+      "Sinh nhật tuổi 30",
+      "Thanh xuân là em 🌺🌺",
+      "Best Wishes For You",
+      "Vui vẻ và Hạnh phúc ❤️",
+      "❤️❤️🥰🥰❤️❤️",
+      "An nhiên tự tại",
+      "Mãi là cô bé xinh đẹp của lòng anh!",
+      "Sinh nhật đáng nhớ",
+      "Sinh nhật đầu tiên khi có anh",
+      "❤️❤️ I Love You ❤️❤️",
+      "Hạnh phúc ngập tràn mỗi ngày",
+      "Nụ cười em là điều quý giá",
+      "Chúc em luôn tỏa sáng rạng ngời",
+      "Mỗi khoảnh khắc bên em đều quý báu",
+      "Yêu thương luôn bên em mỗi bước đi",
+      "Chúc em thành công và bình an",
+      "Ngập tràn những điều tốt đẹp nhất",
+      "Tuổi mới luôn xinh đẹp và tự tin",
+      "Luôn có anh dõi theo từ xa 🥹",
+      "❤️ Mãi thương em ❤️",
+      "🌸 Hoa cũng không bằng em 🌸",
+      "Cười nhiều vào nhé cô gái nhỏ",
+      "Gửi em nghìn lời chúc dễ thương nhất",
+      "Sinh nhật hồng như má em vậy á",
+      "Thế giới dịu dàng vì có em",
+      "Ánh mắt em làm tim anh tan chảy",
+      "Ngủ ngon từng đêm, em nhé 💤",
+      "❤️ Em là người đặc biệt nhất ❤️"
+    ];
 
-  setInterval(() => {
-    for (let i = 0; i < 2; i++) {
+    function createMessage(text) {
+      const div = document.createElement('div');
+      div.className = 'message';
+      div.innerText = text;
+      div.style.left = Math.random() * 100 + 'vw';
+      div.style.top = '100vh';
+      div.style.fontSize = (20 + Math.random() * 10) + 'px';
+      div.style.setProperty('--x', `${(Math.random() - 0.5) * 50}vw`);
+      div.style.animationDuration = (10 + Math.random() * 5) + 's';
+      document.body.appendChild(div);
+
+      setTimeout(() => {
+        document.body.removeChild(div);
+      }, 15000);
+    }
+
+    setInterval(() => {
       const message = messages[Math.floor(Math.random() * messages.length)];
       createMessage(message);
-    }
-  }, 300);
-</script>
+    }, 600); // Nhanh hơn để có nhiều bong bóng
+  </script>
+</body>
+</html>
